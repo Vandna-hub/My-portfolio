@@ -1,0 +1,304 @@
+/* ============================== 
+   Root Variables (Theme Colors)
+   ============================== */
+:root {
+  --bg-dark: #0d1117;         /* Main dark background */
+  --bg-black: #000;           /* Pure black background */
+  --text-light: #e6edf3;      /* Light text for readability */
+  --accent: #00ffff;          /* Accent color (cyan) */
+}
+
+/*  Global Styles */
+body {
+  background: var(--bg-dark); /* Dark background applied globally */
+  color: var(--text-light);   /* Light text color */
+  font-family: 'Inter', sans-serif; /* Default font */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Fira Code', monospace; /* Headings with monospace font */
+}
+
+/* Accent utility classes */
+.text-cyan {
+  color: var(--accent) !important; /* Force cyan text */
+}
+
+.bg-cyan {
+  background: var(--accent) !important; /* Force cyan background */
+}
+
+/* Accent button */
+.btn-cyan {
+  background: var(--accent); /* Cyan background */
+  color: #000;               /* Black text for contrast */
+  border: #00ffff;           /* Cyan border */
+  border-radius: 20px;       /* Rounded button edges */
+}
+
+.btn-cyan:hover {
+  opacity: 0.9; /* Slight transparency on hover */
+}
+
+/* Download button */
+.btn-download {
+  background: cyan;          /* Cyan background */
+  margin-top: 50px;          /* Extra spacing above */
+  color: #0d1117;            /* Dark text */
+  border: 2px solid cyan;    /* Cyan border */
+  border-radius: 20px;       /* Rounded corners */
+}
+
+.btn-download:hover {
+  background: #0d1117;       /* Dark background */
+  color: cyan;               /* Cyan text */
+}
+
+/*  About Box (Card Style) */
+.about-box {
+  max-width: 800px;                         /* Limit width */
+  background: #161b22;                      /* Dark card background */
+  border: 1px solid #30363d;                /* Subtle border */
+  border-radius: 12px;                      /* Rounded corners */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.08); /* Cyan glow */
+  font-size: 1.03rem;                       /* Slightly bigger text */
+  line-height: 1.6;                         /* Spacing between lines */
+  transition: transform 0.28s ease, box-shadow 0.28s ease; /* Smooth hover */
+}
+
+/* Hover effect */
+.about-box:hover {
+  transform: translateY(-6px);              /* Slight lift */
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.22); /* Stronger glow */
+}
+
+/* About box headings */
+.about-box h2 {
+  font-family: 'Fira Code', monospace;      /* Monospace font */
+  color: var(--accent, #00ffff);            /* Cyan text */
+}
+
+/* About box paragraphs */
+.about-box p {
+  color: #d9e6ef;                           /* Light gray text */
+  margin-bottom: 0.9rem;                    /* Spacing */
+}
+
+/* Skills Section */
+#skills {
+  padding: 50px;            /* Inner spacing */
+  border-radius: 15px;      /* Rounded edges */
+  max-width: 600px;         /* Limit width */
+  margin: auto;             /* Center block */
+}
+
+.skills-box:hover {
+  transform: translateY(-6px); /* Lift effect */
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.22); /* Glow */
+}
+
+#skills h2 {
+  text-align: center;       /* Centered title */
+  margin-bottom: 30px;      /* Space below */
+  font-size: 28px;          /* Large font */
+  color: #333;              /* Dark gray */
+}
+
+/* Individual skill container */
+.skill {
+  margin-bottom: 20px;      /* Spacing between skills */
+}
+
+.skill p {
+  margin: 0 0 8px;          /* Margin under text */
+  font-weight: bold;        /* Bold skill name */
+  color: #444;              /* Darker gray */
+}
+
+/* Progress bar container */
+.progress {
+  background: #e0e0e0;      /* Light gray track */
+  border-radius: 20px;      /* Rounded track */
+  overflow: hidden;         /* Prevent overflow */
+  height: 20px;             /* Bar height */
+  position: relative;       /* For child positioning */
+}
+
+/* Progress bar fill */
+.progress-bar {
+  height: 20px;             /* Full height */
+  border-radius: 20px;      /* Rounded edges */
+  width: 0;                 /* Start empty (animated fill) */
+  transition: width 2s ease-in-out; /* Smooth growth */
+  position: relative;       
+  display: flex;            /* Align text inside */
+  align-items: center;      
+  justify-content: flex-end;/* Text at end */
+  padding-right: 10px;      /* Spacing from edge */
+  color: #fff;              /* White text */
+  font-weight: bold;        /* Bold text */
+  font-size: 12px;          /* Small font */
+}
+
+/* Percent text inside progress bar */
+.percent {
+  position: relative;
+  z-index: 2; /* Keeps above bar */
+}
+
+/*  Experience Timeline */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: auto;                   /* Centered */
+  padding-left: 20px;             /* Space for line */
+  border-left: 3px solid #00ffff; /* Cyan vertical line */
+}
+
+.timeline-item {
+  margin: 20px 0;                 /* Space between items */
+  padding: 15px 20px;             /* Inner spacing */
+  background: #fff;               /* White background */
+  border-radius: 10px;            /* Rounded edges */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  position: relative;             /* For indicator */
+  transition: 0.3s ease;          /* Smooth hover */
+}
+
+/* Timeline circle indicator */
+.timeline-item::before {
+  content: "";                    /* Empty element */
+  position: absolute;             
+  left: -10px;                    /* Align to line */
+  top: 20px;                      /* Vertical position */
+  width: 20px;
+  height: 20px;
+  background: #00ffff;            /* Cyan dot */
+  border-radius: 50%;             /* Circle */
+  border: 3px solid #fff;         /* White border */
+  box-shadow: 0 0 0 3px #0d6efd33; /* Glow effect */
+}
+
+/* Hover effect */
+.timeline-item:hover {
+  transform: scale(1.02);         /* Slight zoom */
+  background: #f9fbff;            /* Light background */
+}
+
+/* Timeline content text */
+.role {
+  font-size: 18px;                
+  font-weight: bold;              
+  color: #333;                    
+}
+
+.company {
+  font-size: 16px;
+  color: #555;
+}
+
+.date {
+  font-size: 14px;
+  color: #888;
+  font-style: italic;
+}
+
+.desc {
+  margin-top: 8px;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 10px; /* Smaller padding */
+  }
+
+  .timeline-item {
+    font-size: 14px;    /* Smaller text */
+  }
+}
+
+/*  Project Cards */
+.project-card {
+  background: #161b22;              /* Dark card */
+  border: 1px solid #30363d;        /* Subtle border */
+  color: var(--text-light);         /* Light text */
+  text-align: justify;              /* Justified text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover */
+}
+
+.project-img {
+  height: 200px;                    /* Fixed height */
+  object-fit: cover;                /* Crop image nicely */
+  width: 100%;                      /* Full width */
+  border-bottom: 1px solid #30363d; /* Divider */
+}
+
+.project-card:hover {
+  transform: translateY(-6px);      /* Lift effect */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4); /* Cyan glow */
+}
+
+/*  Animations (Fade In) */
+.fade-in {
+  opacity: 0;                        /* Start invisible */
+  transform: translateY(20px);       /* Shifted down */
+  animation: fadeInUp 0.8s ease forwards; /* Animate upward */
+}
+
+.fade-in.delay-1 {
+  animation-delay: 0.3s;             /* Staggered delay */
+}
+
+.fade-in.delay-2 {
+  animation-delay: 0.6s;             /* Longer delay */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;                      /* Fully visible */
+    transform: translateY(0);        /* Original position */
+  }
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #00ffff; /* Cyan headings */
+}
+
+/*  Contact Form */
+.alert {
+  transition: opacity 0.5s ease-in-out; /* Fade effect */
+}
+
+/* Footer*/
+footer {
+  background: #0d1117;  /* Dark footer */
+  color: #fff;          /* White text */
+  text-align: center;   /* Centered text */
+  padding: 20px 0;      /* Inner spacing */
+}
+
+footer p {
+  margin-bottom: 10px;
+  font-family: 'Inter', sans-serif;
+}
+
+footer a {
+  color: #fff;          /* White icons/links */
+  margin: 0 15px;       /* Spacing between icons */
+  font-size: 1.9rem;    /* Bigger icons */
+  transition: color 0.3s ease; /* Smooth hover */
+}
+
+footer a:hover {
+  color: cyan;          /* Accent hover color */
+}
